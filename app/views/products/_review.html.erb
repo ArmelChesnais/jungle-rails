@@ -4,7 +4,7 @@
       <%= fa_icon "star" %>
     <% end %>
     <% (5 - review.rating).times do%>
-      <%= fa_icon "star-o" %>
+      <%= fa_icon "star", class: "empty"%>
     <% end %>
   </header>
   <p class="description">

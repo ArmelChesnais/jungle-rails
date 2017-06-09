@@ -83,6 +83,33 @@ main section.products-show {
       max-width: 100%;
     }
   }
+
+  .reviews {
+    padding: 20px;
+
+    article.review {
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 5px;
+      margin-bottom: 10px;
+
+      header {
+        color: yellow;
+        text-shadow: 1px 1px 1px black;
+        border-bottom: 1px solid #d2d2d2;
+        padding-bottom: 5px;
+
+        .empty {
+          color: white;
+        }
+      }
+
+      .description {
+        padding: 5px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 
