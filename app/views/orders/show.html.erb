@@ -6,7 +6,7 @@
 
   <div class="order-summary well">
     <h4>Thank you for your order!</h4>
-    <%= @order.line_items.each { |line| puts line} %>
+    <p><%= @order.email %></p>
   </div>
 
   <div class="panel panel-default items">
