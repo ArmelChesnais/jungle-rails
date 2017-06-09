@@ -1,0 +1,16 @@
+<article class="review">
+  <header>
+    <% review.rating.times do %>
+      <%= fa_icon "star" %>
+    <% end %>
+    <% (5 - review.rating).times do%>
+      <%= fa_icon "star-o" %>
+    <% end %>
+  </header>
+  <p class="description">
+    <%= review.description %>
+  </p>
+  <footer class="actions">
+    - <%= review.user.first_name + " " + review.user.last_name %>
+  </footer>
+</article>

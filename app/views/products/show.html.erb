@@ -27,5 +27,13 @@
     </div>
 
   </article>
+  <div class="row">
+    <% if @product.reviews.length > 0 %>
+    Reviews:
+    <% end %>
+    <% @product.reviews.each do |review| %>
+      <%= render 'review', review: review %>
+    <% end %>
+  </div>
 
 </section>

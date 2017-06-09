@@ -35,7 +35,7 @@ puts "Re-creating Products ..."
 
 Product.destroy_all
 
-cat1.products.create!({
+prd1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
@@ -43,7 +43,7 @@ cat1.products.create!({
   price: 64.99
 })
 
-cat1.products.create!({
+prd2 = cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel2.jpg'),
@@ -132,5 +132,76 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Re-creating User ..."
 
+User.destroy_all
+
+usr1 = User.create({
+  first_name: "Armel",
+  last_name: "C",
+  email: "test@test.test",
+  password: "a"
+})
+
+usr2 = User.create({
+  first_name: "Barb",
+  last_name: "D",
+  email: "test2@test.test",
+  password: "b"
+})
+
+# create_table "users", force: :cascade do |t|
+#     t.string   "first_name"
+#     t.string   "last_name"
+#     t.string   "email"
+#     t.string   "password_digest"
+#     t.datetime "created_at",      null: false
+#     t.datetime "updated_at",      null: false
+#   end
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create({
+  product_id: prd1.id,
+  user_id: usr1.id,
+  description: "good",
+  rating: 4
+})
+
+Review.create({
+  product_id: prd1.id,
+  user_id: usr1.id,
+  description: "ok",
+  rating: 3
+})
+
+Review.create({
+  product_id: prd1.id,
+  user_id: usr1.id,
+  rating: 5
+})
+
+Review.create({
+  product_id: prd2.id,
+  user_id: usr1.id,
+  rating: 1
+})
+
+Review.create({
+  product_id: prd2.id,
+  user_id: usr2.id,
+  rating: 4
+})
+
+
+# create_table "reviews", force: :cascade do |t|
+#     t.integer  "product_id"
+#     t.integer  "user_id"
+#     t.text     "description"
+#     t.integer  "rating"
+#     t.datetime "created_at",  null: false
+#     t.datetime "updated_at",  null: false
+#   end
 puts "DONE!"
