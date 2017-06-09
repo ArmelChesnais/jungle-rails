@@ -1,0 +1,20 @@
+<% if product = Product.find_by(id: product_id) %>
+  <% item_total = product.price * quantity %>
+  <% @cart_total += item_total %>
+
+  <tr>
+    <td>
+      <h4><%= product.name %></h4>
+      <br>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+    <td>
+      <%= quantity %>
+    </td>
+    <td>
+      <%= item_total %>
+    </td>
+  </tr>
+<% end %>
