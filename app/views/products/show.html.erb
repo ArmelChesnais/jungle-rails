@@ -22,6 +22,8 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Rating</dt>
+          <dd><%= render 'rating', {rating: @product.reviews.average(:rating).to_i} %></dd>
         </dl>
       </div>
     </div>

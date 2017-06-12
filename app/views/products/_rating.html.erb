@@ -1,0 +1,6 @@
+<% rating.times do %>
+  <%= fa_icon "star", class: "star" %>
+<% end %>
+<% (5 - rating).times do%>
+  <%= fa_icon "star", class: "empty"%>
+<% end %>

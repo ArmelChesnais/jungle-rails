@@ -76,6 +76,15 @@ main section.categories-show {
   }
 }
 
+.fa-star {
+  color: yellow;
+  text-shadow: 1px 1px 1px black;
+}
+
+.fa-star.empty {
+  color: white;
+}
+
 main section.products-show {
 
   .product-detail {

@@ -4,6 +4,9 @@
       <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
+    <p>
+      <%= render 'rating', {rating: product.reviews.average(:rating).to_i} %>
+    </p>
   </header>
   <p class="description">
     <%= product.description %>
