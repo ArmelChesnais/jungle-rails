@@ -1,16 +1,21 @@
-<article class="review">
-  <header>
-    <% review.rating.times do %>
-      <%= fa_icon "star" %>
-    <% end %>
-    <% (5 - review.rating).times do%>
-      <%= fa_icon "star", class: "empty"%>
-    <% end %>
-  </header>
-  <p class="description">
-    <%= review.description %>
-  </p>
-  <footer class="actions">
-    - <%= review.user.first_name + " " + review.user.last_name %>
-  </footer>
+<article class="review panel panel-default">
+  <div class="panel-body">
+    <header>
+      <% review.rating.times do %>
+        <%= fa_icon "star", class: "star" %>
+      <% end %>
+      <% (5 - review.rating).times do%>
+        <%= fa_icon "star", class: "empty"%>
+      <% end %>
+    </header>
+    <p class="description">
+      <%= review.description %>
+    </p>
+    <footer class="actions">
+      <p class="pull-left">- <%= review.user.first_name + " " + review.user.last_name %></p>
+      <% if current_user && current_user.id == review.user.id %>
+        <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger pull-right', method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </footer>
+  </div>
 </article>

@@ -84,14 +84,32 @@ main section.products-show {
     }
   }
 
+  .review {
+
+    input.star {
+      display: none;
+    }
+
+    label.star {
+      text-shadow: 1px 1px 1px black;
+      color: yellow;
+    }
+
+    input.star:checked ~ label.star:before {
+      color: white;
+
+    }
+  }
+
+
   .reviews {
     padding: 20px;
 
     article.review {
-      border: 1px solid black;
+      /*border: 1px solid black;
       border-radius: 5px;
       padding: 5px;
-      margin-bottom: 10px;
+      margin-bottom: 10px;*/
 
       header {
         color: yellow;

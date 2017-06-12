@@ -1,0 +1,26 @@
+<div class="review panel panel-default">
+  <div class="panel-body">
+    <%= form_for [@product, @review] do |form|
+
+      %>
+
+      <div class="form-group">
+        <label class="star fa fa-star" for="review_rating_1"></label>
+        <%= form.radio_button(:rating, 1, class: "star") %>
+        <label class="star fa fa-star" for="review_rating_2"></label>
+        <%= form.radio_button(:rating, 2, class: "star") %>
+        <label class="star fa fa-star" for="review_rating_3"></label>
+        <%= form.radio_button(:rating, 3, class: "star") %>
+        <label class="star fa fa-star" for="review_rating_4"></label>
+        <%= form.radio_button(:rating, 4, class: "star") %>
+        <label class="star fa fa-star" for="review_rating_5"></label>
+        <%= form.radio_button(:rating, 5, class: "star", checked: true) %>
+      </div>
+      <div class="form-group">
+        <%= form.text_area :description, class: "form-control"%>
+      </div>
+
+      <%= form.submit 'Submit Review', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

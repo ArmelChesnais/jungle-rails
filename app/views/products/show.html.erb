@@ -27,11 +27,15 @@
     </div>
 
   </article>
+  <% if current_user %>
+    <%= render 'review_form' %>
+  <% end %>
+
   <div class="row reviews">
     <% if @product.reviews.length > 0 %>
     Reviews:
     <% end %>
-    <% @product.reviews.each do |review| %>
+    <% @product.reviews.reverse.each do |review| %>
       <%= render 'review', review: review %>
     <% end %>
   </div>
