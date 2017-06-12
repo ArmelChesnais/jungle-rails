@@ -1,17 +1,16 @@
 class ReviewsController < ApplicationController
 
-  before_filter :user_logged_in
+  before_filter :current_user
 
   def create
-    prod = Product.find(params[:product_id])
-    rev = prod.reviews.new(review_params)
-    # rev.product = prod
+    @product = Product.find(params[:product_id])
+    rev = @product.reviews.new(review_params)
     rev.user = current_user
     rev.rating = rev.rating.to_i
     if rev.save
-      redirect_to prod
+      redirect_to @product
     else
-      render prod
+      render "products/show"
     end
   end
 
