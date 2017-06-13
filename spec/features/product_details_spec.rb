@@ -25,7 +25,6 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     #DEBUG / VERIFY
     expect(page).to have_css '.product-detail'
     save_screenshot
-    puts page.html
   end
 
 end
